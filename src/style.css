@@ -2,10 +2,20 @@
 
 :root {
   --brown-primary: #eb8d2b;
+  --black-secondary: black;
   --font-primary: "Poppins", sans-serif;
 }
 
 a {
-  color: var(--brown-primary) !important;
+  color: var(--black-secondary) !important;
   font-family: var(--font-primary);
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+svg {
+  color: var(--brown-primary);
 }
