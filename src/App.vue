@@ -2,7 +2,7 @@
   <div id="app">
     <header-main />
     <router-view />
-    <footer-main  />
+    <footer-main />
   </div>
 </template>
 
@@ -10,6 +10,6 @@
 import HeaderMain from "./components/HeaderMain.vue";
 import FooterMain from "./components/FooterMain.vue";
 export default {
-  components: { HeaderMain,FooterMain },
+  components: { HeaderMain, FooterMain },
 };
 </script>
