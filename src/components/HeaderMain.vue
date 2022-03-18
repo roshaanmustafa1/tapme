@@ -19,10 +19,12 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ms-auto">
             <b-nav-item-dropdown
-              text="Lang"
+              
               class="ms-auto searchDropdown"
               right
-            >
+            ><template #button-content>
+                <span><b-icon icon="Search"></b-icon></span>
+              </template>
               <div class="d-flex">
                 <b-form-input
                   size="sm"
@@ -90,4 +92,10 @@ nav.navbar {
 input::placeholder {
   color: black !important;
 }
+
+.dropdown-toggle::after{
+  display:none !important;
+}
+
+
 </style>
