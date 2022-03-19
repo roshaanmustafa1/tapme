@@ -114,4 +114,20 @@ li.nav-item:nth-child(4) {
 .nav-links a.nav-link {
   padding: 10px !important;
 }
+
+.footer-main .navbar-nav .nav-link {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+</style>
+<style lang="scss">
+.footer-main {
+  .navbar-nav .nav-link {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+  a.nav-link {
+    color: #fff !important;
+  }
+}
 </style>

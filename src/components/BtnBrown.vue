@@ -1,9 +1,13 @@
 <template>
-  <div class="container">
-    <button class="btn btn2">Click Me</button>
+  <div>
+    <a class="btn btn1 me-2" :href="href">{{ btnbrownText }}</a>
   </div>
 </template>
-
+<script>
+export default {
+  props: ["btnbrownText", "href"],
+};
+</script>
 <style scoped>
 .btn {
   border: 1px solid var(--brown-primary);
@@ -11,14 +15,18 @@
   padding: 8px 20px;
   font-size: 14px;
   font-family: var(--font-primary);
+  position: relative;
+  overflow: hidden;
+  transition: 0.8s;
+  text-transform: capitalize;
 }
 
-.btn2 {
-  color: var(--black-secondary);
-}
-
-.btn2:hover {
+.btn1 {
   color: var(--brown-primary);
+}
+
+.btn1:hover {
+  color: #fff;
 }
 
 .btn::before {
@@ -32,16 +40,12 @@
   transition: 0.8s;
 }
 
-.btn2::before {
+.btn1::before {
   top: 0;
-  border-radius: 50% 50% 0 0;
+  border-radius: 0 0 50% 50%;
 }
 
-.btn2::before {
-  height: 0%;
-}
-
-.btn2:hover::before {
+.btn1:hover::before {
   height: 180%;
 }
 </style>
