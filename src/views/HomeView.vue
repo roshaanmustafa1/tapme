@@ -184,12 +184,12 @@ img.sec2nfc {
 }
 
 .sec2nfc {
-  animation: levitation 1s infinite;
+  animation: nfcanimation 1s infinite;
   animation-direction: alternate-reverse;
   transform: translate(0, -50%);
 }
 
-@keyframes levitation {
+@keyframes nfcanimation {
   from {
     height: 50px;
   }
@@ -197,5 +197,6 @@ img.sec2nfc {
     height: 70px;
   }
 }
+
 /* Home Section 1 style Starts*/
 </style>
