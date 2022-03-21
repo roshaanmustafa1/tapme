@@ -56,7 +56,7 @@
           <div
             class="col-sm-12 col-md-6 d-flex justify-content-center flex-column"
           >
-            <h4>Simply Awesome <span></span></h4>
+            <h4>Contact Is Just Now Tap Away <span></span></h4>
             <h1>Tapme Change the way to share the contact</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
@@ -83,6 +83,7 @@
           <div class="row">
             <div class="col-md-5 offset-md-1">
               <div class="feature_middle">
+                <h4>Simply Awesome <span></span></h4>
                 <h2>Our Special Feature's</h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -106,7 +107,7 @@
           <div class="col-sm-12 col-lg-10 offset-lg-1">
             <div class="row">
               <div class="col-sm-6 col-lg-4">
-                <div class="single_feature">
+                <div class="single_feature me-3">
                   <h4>Beautiful Design</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -136,7 +137,7 @@
               </div>
               <!-- single-feature -->
               <div class="col-sm-6 col-lg-4">
-                <div class="single_feature">
+                <div class="single_feature me-3">
                   <h4>Pure and Simple</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -166,7 +167,7 @@
               </div>
               <!-- single-feature -->
               <div class="col-sm-6 col-lg-5">
-                <div class="single_feature">
+                <div class="single_feature me-3">
                   <h4>Color Schemes</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -196,7 +197,7 @@
               </div>
               <!-- single-feature -->
               <div class="col-sm-6 col-lg-5">
-                <div class="single_feature">
+                <div class="single_feature me-3">
                   <h4>Wow Animations</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -226,7 +227,7 @@
               </div>
               <!-- single-feature -->
               <div class="col-sm-6 col-lg-6">
-                <div class="single_feature">
+                <div class="single_feature me-3">
                   <h4>Excellent Everything</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -257,7 +258,7 @@
               </div>
               <!-- single-feature -->
               <div class="col-sm-6 col-lg-6">
-                <div class="single_feature">
+                <div class="single_feature me-3">
                   <h4>Easy To Customize</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -292,17 +293,19 @@
       </div>
     </section>
 
+    <SliderCards />
+
     <!-- Home Features Section 3 ends  -->
   </div>
 </template>
 
 <script>
 import BtnBrown from "../components/BtnBrown.vue";
-
+import SliderCards from "../components/SliderCards.vue";
 import BtnBlack from "../components/BtnBlack.vue";
 export default {
   name: "HomeView",
-  components: { BtnBrown, BtnBlack },
+  components: { BtnBrown, BtnBlack, SliderCards },
 };
 </script>
 <!-- Home Section 1 style Starts  -->
@@ -429,7 +432,7 @@ img.sec2nfc {
   height: 800px;
   text-align: left;
   margin-top: 0;
-  margin-bottom: -250px;
+  margin-bottom: -400px;
   padding-top: 100px;
   background: url(@/assets/images/Features_Back.png) no-repeat center center;
   background-size: contain;
@@ -443,7 +446,7 @@ img.sec2nfc {
 }
 
 #features h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-primary);
 }
 .features_middle h2,
 .features_middle p {
@@ -451,10 +454,10 @@ img.sec2nfc {
 }
 .feature_img {
   text-align: right;
-  width: 75% !important;
+  max-width: 60% !important;
 }
 .feature_img img {
-  max-width: 60%;
+  max-width: 60% !important;
 }
 .margin_top_up {
   margin-top: -30rem;

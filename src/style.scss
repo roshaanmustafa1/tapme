@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
+  --font-primary: "Poppins", sans-serif;
+  --font-heading: "Playfair Display", serif;
+
   --brown-primary: #eb8d2b;
   --black-secondary: black;
   --white-third: rgb(255, 255, 255);
-  --font-primary: "Poppins", sans-serif;
-  --font-heading: "Playfair Display", serif;
   --bg-white: #fff;
   --bg-black: #000000;
   --bg-light-pink: #d95a00;
   --bg-light-gray: #f6f9fe;
-  --bg-gradient: linear-gradient(to top, #eb8d2b 0%, rgb(173 112 0) 100%);
+  --bg-gradient: linear-gradient(to top, #eb8d2b 0%, rgb(239 121 0 / 85%) 100%);
+
   --bg-card-shodow: 0 0.188rem 1.25rem 0px rgba(0, 0, 0, 0.06);
   --bg-card-shodow: 0 2rem 5rem rgb(0, 0, 0, 0.06);
   --bg-light-gray-1: #eee;
@@ -82,6 +84,10 @@ h3 {
   font-weight: 400;
   color: var(--text-black);
   line-height: 2.375rem;
+}
+
+h4 {
+  font-family: var(--font-primary);
 }
 
 h5 {
