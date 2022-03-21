@@ -39,41 +39,6 @@
       </div>
     </section>
     <!-- Home Section 1 Ends  -->
-    <!-- Home Section 2 Starts  -->
-    <section class="section2">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <div class="position-relative d-flex justify-content-center">
-              <img
-                src="@/assets/images/cardsec2back.png"
-                class="sec2imgfront"
-                alt="cardfront"
-              />
-              <img src="@/assets/icons/nfc.png" class="sec2nfc" alt="nfc" />
-            </div>
-          </div>
-          <div
-            class="col-sm-12 col-md-6 d-flex justify-content-center flex-column"
-          >
-            <h4>Contact Is Just Now Tap Away <span></span></h4>
-            <h1>Tapme Change the way to share the contact</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              earum optio asperiores, vitae sunt suscipit animi totam unde,
-              autem fugiat ab atque voluptates architecto quisquam est expedita
-              molestias odio nam!
-            </p>
-            <BtnBlack
-              href="https://bootstrap-vue.org/docs/components/navbar"
-              btnText="Buy Now"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Home Section 2 Ends  -->
 
     <!-- Home Features Section 3 Starts  -->
 
@@ -293,9 +258,44 @@
       </div>
     </section>
 
-    <SliderCards />
-
     <!-- Home Features Section 3 ends  -->
+    <!-- Home Section 2 Starts  -->
+    <section class="section2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <div class="position-relative d-flex justify-content-center">
+              <img
+                src="@/assets/images/cardsec2back.png"
+                class="sec2imgfront"
+                alt="cardfront"
+              />
+              <img src="@/assets/icons/nfc.png" class="sec2nfc" alt="nfc" />
+            </div>
+          </div>
+          <div
+            class="col-sm-12 col-md-8 d-flex justify-content-center flex-column ps-5"
+          >
+            <h4>Contact Is Just Now Tap Away <span></span></h4>
+            <h1>Tapme Change the way to share the contact</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+              earum optio asperiores, vitae sunt suscipit animi totam unde,
+              autem fugiat ab atque voluptates architecto quisquam est expedita
+              molestias odio nam!
+            </p>
+            <BtnBlack
+              href="https://bootstrap-vue.org/docs/components/navbar"
+              btnText="Buy Now"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Section 2 Ends  -->
+
+    <SliderCards />
   </div>
 </template>
 
@@ -309,12 +309,12 @@ export default {
 };
 </script>
 <!-- Home Section 1 style Starts  -->
-<style scoped>
+<style scoped lang="scss">
 /* Home Section 1 style Starts*/
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem !important;
   text-transform: capitalize;
   font-weight: 300;
   letter-spacing: 2px;
@@ -338,7 +338,7 @@ p {
 
 .home-img {
   position: relative;
-  height: 96vh;
+  height: 100vh;
 }
 
 img.img-fluid.heroimgfront {
@@ -384,8 +384,11 @@ img.img-fluid.heroimgback {
 
 /* Home Section 1 style ends*/
 .section2 {
-  background-color: var(--brown-primary);
-  margin: 100px 0px;
+  background: url("@/assets/images/sec2back.png");
+  background-position: center top;
+  background-size: cover;
+  z-index: -1;
+  margin: 50px 0px;
   height: calc(100vh - 95px);
   display: flex;
   align-items: center;
@@ -427,29 +430,34 @@ img.sec2nfc {
 /* Home Section 1 style Starts*/
 
 /* Home Features style Starts*/
+section#features {
+  margin-top: 20px;
+}
 
 #features .title {
   height: 800px;
   text-align: left;
   margin-top: 0;
-  margin-bottom: -400px;
+  margin-bottom: -450px;
   padding-top: 100px;
-  background: url(@/assets/images/Features_Back.png) no-repeat center center;
-  background-size: contain;
+  background: url(@/assets/images/curve-lines.png) no-repeat center center;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 72%);
+  background-color: var(--black-secondary);
+  background-size: cover !important;
   -webkit-background-size: cover;
 }
 #features .title h2 {
   margin-bottom: 0.813rem;
   font-family: var(--font-heading);
-  color: var(--text-white);
+  color: var(--brown-primary);
   font-size: 2.5rem;
 }
 
-#features h4 {
+#features .feature_middle h4 {
   font-family: var(--font-primary);
+  color: var(--text-white);
 }
-.features_middle h2,
-.features_middle p {
+#features .feature_middle p {
   color: var(--text-white);
 }
 .feature_img {
@@ -461,6 +469,7 @@ img.sec2nfc {
 }
 .margin_top_up {
   margin-top: -30rem;
+  height: 92vh;
 }
 .single_feature {
   background: var(--bg-white);
@@ -468,13 +477,22 @@ img.sec2nfc {
   padding: 2.5rem 2.5rem 2.438rem 3.125rem;
   position: relative;
   border-radius: 1.563rem;
-  -webkit-box-shadow: 0 0.938rem 2.5rem 0 rgb(0 0 0 / 8%);
   box-shadow: 0 0.938rem 2.5rem 0 rgb(0 0 0 / 8%);
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -ms-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+
+  cursor: pointer;
+  &:hover .feature_icon {
+    background: var(--black-secondary) !important;
+  }
+  &:hover {
+    background: var(--bg-gradient) !important;
+  }
+  &:hover h4 {
+    color: var(--text-white);
+  }
+}
+.single_feature h4 {
+  color: var(--brown-primary);
 }
 .feature_icon {
   width: 50px;
@@ -488,8 +506,10 @@ img.sec2nfc {
   color: var(--text-white);
   font-size: 23px;
   border-bottom-left-radius: 25px;
-  background: var(--bg-black);
+  background: var(--brown-primary);
+  transition: all 0.2s ease-in;
 }
+
 svg:not(:root).svg-inline--fa {
   overflow: visible;
 }
@@ -506,6 +526,7 @@ svg:not(:root).svg-inline--fa {
 .single_feature:hover {
   color: var(--text-white);
   background: var(--bg-gradient);
+  box-shadow: 0 0.938rem 3.5rem 2px rgb(0 0 0 / 60%);
 }
 
 /* Home Features style ends*/ ;

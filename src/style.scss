@@ -74,13 +74,13 @@ h1 {
 
 h2 {
   color: var(--text-black);
-  font-size: 2.875rem;
+  font-size: 60px;
   line-height: 3.75rem;
   font-weight: 400;
 }
 
 h3 {
-  font-size: 1.563rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: var(--text-black);
   line-height: 2.375rem;
@@ -110,6 +110,7 @@ h5 {
 }
 p {
   margin-bottom: 0;
+  font-size: 1rem !important;
 }
 a {
   color: var(--text-light-black);
@@ -186,58 +187,6 @@ h5 {
   font-weight: 700;
   letter-spacing: 0.063rem;
   line-height: 1.688rem;
-  color: var(--text-light-pink);
+  color: var(--black-secondary);
   text-transform: uppercase;
-}
-
-section,
-.section {
-  position: relative;
-}
-
-.container {
-  width: 100%;
-  margin: 0 auto;
-}
-p {
-  margin-bottom: 0;
-}
-a {
-  color: var(--text-light-black);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-a:hover,
-a:focus {
-  color: var(--text-light-pink);
-}
-
-a,
-a:hover,
-a:focus,
-.btn:focus {
-  text-decoration: none;
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ol li,
-ul li {
-  list-style: none;
-}
-button,
-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
 }

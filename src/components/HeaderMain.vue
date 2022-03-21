@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
 nav.navbar {
-  padding: 10px 35px;
+  padding: 0px 35px;
 }
 .form-inline {
   display: flex;
@@ -115,7 +115,7 @@ input::placeholder {
 }
 
 .logo {
-  width: 110px;
+  width: 90px;
   height: 65px;
   use {
     transition: all 0.2s ease-in;
