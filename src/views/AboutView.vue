@@ -92,6 +92,9 @@ export default {
 <style lang="scss" scoped>
 #aboutus {
   margin: rem 0rem 2rem 0rem;
+  background: url("@/assets/images/Lines.png");
+  background-position: center top;
+  background-size: cover;
   padding-top: 150px;
   z-index: -3 !important;
   height: 80vh;
@@ -106,6 +109,10 @@ export default {
 #aboutus .aboutdata h2 {
   font-size: 60px !important;
   font-family: var(--font-heading);
+}
+#aboutus .aboutdata p,
+h4 {
+  color: white;
 }
 
 .aboutimg {
