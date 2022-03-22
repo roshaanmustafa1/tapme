@@ -105,7 +105,7 @@ li.nav-item:nth-child(4) {
   background-size: cover;
   height: 600px;
   background-position: center top;
-  margin-top: 100px;
+
   justify-content: end;
   display: flex;
   flex-direction: column;

@@ -150,6 +150,7 @@ img.about-img2 {
   justify-content: center;
   flex-direction: column;
   margin-top: 150px;
+  margin-bottom: 200px;
 }
 
 .aboutcardmain h2 {
