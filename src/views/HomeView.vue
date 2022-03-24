@@ -2,7 +2,7 @@
   <div>
     <!-- Home Section 1 Starts  -->
     <section id="home">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row align-item-center">
           <div class="col-sm-12 col-lg-6 firsthalf">
             <div class="home-text">
@@ -23,17 +23,20 @@
           </div>
           <div class="col-sm-12 col-lg-6 home-img-sec">
             <div class="home-img">
-              <img
+              <!-- <img
                 src="@/assets/images/HomeBack.png"
                 alt="sec-1-home"
                 class="img-fluid heroimgback"
-              />
+              /> -->
               <img
                 src="@/assets/images/heroseccards.png"
                 alt="sec-1-home"
                 class="img-fluid heroimgfront"
               />
             </div>
+          </div>
+          <div class="col-12 text-center">
+            <b-icon icon="chevron-down" class="levitating"></b-icon>
           </div>
         </div>
       </div>
@@ -320,6 +323,13 @@ p {
   letter-spacing: 2px;
 }
 
+#home {
+  background-image: url("../assets/images/HomeBack.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
 .home-text h1 {
   font-size: 74px;
   color: var(--brown-primary);
@@ -329,11 +339,10 @@ p {
   margin-top: 100px !important;
 }
 
-.col-sm-12.col-lg-6.firsthalf {
+.firsthalf {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 100px;
 }
 
 .home-img {
@@ -528,6 +537,22 @@ svg:not(:root).svg-inline--fa {
   background: var(--bg-gradient);
   box-shadow: 0 0.938rem 3.5rem 2px rgb(0 0 0 / 60%);
 }
+
+.levitating {
+  font-size: 40px;
+  margin-top: -50px;
+  // animation: levitate  1s infinite;
+  // animation-direction: alternate-reverse;
+}
+
+// @keyframes levitate  {
+//   from {
+//     margin-top: -20px;
+//   }
+//   to {
+//     margin-top: 20px;
+//   }
+// }
 
 /* Home Features style ends*/ ;
 </style>

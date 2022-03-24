@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ShopView from '../views/ShopView.vue'
 import ContactView from '../views/ContactView.vue'
+import SingleProduct from '../views/SingleProduct.vue'
+// import CartPage from '../views/CartPage.vue'
+import CheckoutPage from '../views/CheckoutPage.vue'
+
 
 
 Vue.use(VueRouter)
@@ -17,6 +21,21 @@ const routes = [
     path: '/shop',
     name: 'shop',
     component: ShopView
+  },
+  {
+    path: '/singleproduct',
+    name: 'singleproduct',
+    component: SingleProduct
+  },
+  // {
+  //   path: '/cart',
+  //   name: 'cart',
+  //   component: CartPage
+  // },
+  {
+    path: '/checkout',
+    name: 'checkout',
+    component: CheckoutPage
   },
   {
     path: '/contact',

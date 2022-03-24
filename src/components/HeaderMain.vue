@@ -1,56 +1,64 @@
 <template>
   <div class="HeaderMain" :class="{ scrolled: scrollPosition > 50 }">
-    <b-navbar toggleable="lg" type="light">
-      <b-navbar-brand href="#">
-        <svg class="logo">
-          <use xlink:href="@/assets/images/whitelogo.svg#logo"></use>
-        </svg>
-      </b-navbar-brand>
+    <b-navbar toggleable="lg" type="light" class="mainheader">
+      <div class="container">
+        <router-link to="/" tag="b-navbar-brand">
+          <svg class="logo">
+            <use xlink:href="@/assets/images/whitelogo.svg#logo"></use>
+          </svg>
+        </router-link>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <router-link to="/" tag="b-nav-item" exact>Home</router-link>
-          <router-link to="shop" tag="b-nav-item">Shop</router-link>
-          <router-link to="contact" tag="b-nav-item">Contact Us</router-link>
-          <router-link to="about" tag="b-nav-item">About Us</router-link>
-        </b-navbar-nav>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <router-link to="/" tag="b-nav-item" exact>Home</router-link>
+            <router-link to="shop" tag="b-nav-item">Shop</router-link>
+            <router-link to="contact" tag="b-nav-item">Contact Us</router-link>
+            <router-link to="about" tag="b-nav-item">About Us</router-link>
+          </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ms-auto">
-          <b-nav-item-dropdown class="ms-auto searchDropdown" right
-            ><template #button-content>
-              <span><b-icon icon="Search"></b-icon></span>
-            </template>
-            <div class="d-flex">
-              <b-form-input
-                size="sm"
-                class="mr-sm-2"
-                placeholder="Search"
-              ></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" type="submit"
-                >Search</b-button
-              >
-            </div>
-          </b-nav-item-dropdown>
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template #button-content>
-              <span><b-icon icon="person-fill"></b-icon></span>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-collapse>
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ms-auto">
+            <b-nav-item-dropdown class="ms-auto searchDropdown" right
+              ><template #button-content>
+                <span><b-icon icon="Search"></b-icon></span>
+              </template>
+              <div class="d-flex">
+                <b-form-input
+                  size="sm"
+                  class="mr-sm-2"
+                  placeholder="Search"
+                ></b-form-input>
+                <b-button size="sm" class="my-2 my-sm-0" type="submit"
+                  >Search</b-button
+                >
+              </div>
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content>
+                <span><b-icon icon="person-fill"></b-icon></span>
+              </template>
+              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item
+              ><b-icon icon="cart-fill" v-b-toggle.sidebar-right></b-icon>
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </div>
     </b-navbar>
+    <SideCart />
   </div>
 </template>
 
 <script>
+import SideCart from "@/components/SideCart";
 export default {
   name: "HeaderMain",
+  components: { SideCart },
   data() {
     return { scrollPosition: null };
   },
@@ -122,7 +130,7 @@ input::placeholder {
   }
 }
 
-.scrolled {
+.scrolled .mainheader {
   background-color: rgb(0, 0, 0) !important;
   a.nav-link {
     color: white !important;

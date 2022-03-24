@@ -77,9 +77,9 @@
               </p>
             </div>
             <div class="product-detaild-button">
-              <BtnBrown
+              <BtnBlack
                 href="https://bootstrap-vue.org/docs/components/navbar"
-                btnbrownText="Shop Now"
+                btnText="Shop Now"
               />
             </div>
           </div>
@@ -131,9 +131,12 @@
 </template>
 <script>
 import BtnBrown from "../components/BtnBrown.vue";
+import BtnBlack from "../components/BtnBlack.vue";
+
 export default {
   components: {
     BtnBrown,
+    BtnBlack,
   },
 };
 </script>

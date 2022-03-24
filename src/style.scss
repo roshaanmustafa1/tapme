@@ -25,6 +25,11 @@
   --text-light-gray: #7e8085;
 }
 
+.btn-square {
+  border-radius: 0 !important;
+  border: 0px !important;
+}
+
 h1 {
   font-size: 60px;
   font-family: var(--font-heading);
@@ -44,7 +49,7 @@ svg {
   color: var(--black-seconday);
 }
 
-.scrolled svg {
+.scrolled .mainHeader svg {
   color: white !important;
 }
 
@@ -189,4 +194,10 @@ h5 {
   line-height: 1.688rem;
   color: var(--black-secondary);
   text-transform: uppercase;
+}
+
+svg:focus,
+a:focus,
+button:focus {
+  outline: none !important;
 }
