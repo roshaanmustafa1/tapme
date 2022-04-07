@@ -143,7 +143,7 @@ export default {
 
 <style scoped>
 .shopus {
-  height: 100vh;
+  height: 1200px;
   padding: 200px 0px 0px 0px;
   margin-bottom: 200px px;
 }

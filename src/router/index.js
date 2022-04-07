@@ -4,8 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import ShopView from '../views/ShopView.vue'
 import ContactView from '../views/ContactView.vue'
 import SingleProduct from '../views/SingleProduct.vue'
-// import CartPage from '../views/CartPage.vue'
 import CheckoutPage from '../views/CheckoutPage.vue'
+import LoginSignup from '@/components/LoginSignup.vue'
 
 
 
@@ -27,11 +27,6 @@ const routes = [
     name: 'singleproduct',
     component: SingleProduct
   },
-  // {
-  //   path: '/cart',
-  //   name: 'cart',
-  //   component: CartPage
-  // },
   {
     path: '/checkout',
     name: 'checkout',
@@ -41,6 +36,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactView
+  },
+  {
+    path: '/login-signup',
+    name: 'login-signup',
+    component: LoginSignup
   },
   {
     path: '/about',

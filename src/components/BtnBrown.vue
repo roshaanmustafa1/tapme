@@ -27,6 +27,7 @@ export default {
 
 .btn1:hover {
   color: #fff;
+  z-index: 99;
 }
 
 .btn::before {

@@ -35,14 +35,7 @@
                   Rs<span>0.00</span><span>(Including Tax)</span>
                 </p>
               </div>
-              <div class="col-sm-12 col-md-12">
-                <router-link
-                  to="cart"
-                  tag="button"
-                  class="btn btn-dark w-100 viewcart-btn btn-square"
-                  >View Cart</router-link
-                >
-              </div>
+
               <div class="col-sm-12 col-md-12">
                 <router-link
                   to="checkout"

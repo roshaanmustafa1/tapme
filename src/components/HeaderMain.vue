@@ -1,6 +1,6 @@
 <template>
   <div class="HeaderMain" :class="{ scrolled: scrollPosition > 50 }">
-    <b-navbar toggleable="lg" type="light" class="mainheader">
+    <b-navbar toggleable="sm" type="light" class="mainheader">
       <div class="container">
         <router-link to="/" tag="b-navbar-brand">
           <svg class="logo">
@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 nav.navbar {
   padding: 0px 35px;
 }
@@ -120,6 +120,12 @@ input::placeholder {
   z-index: 20 !important;
   margin-bottom: -95px;
   transition: 0.2s all ease-in;
+  a.nav-link {
+    margin-right: 10px;
+  }
+}
+.mainheader a.nav-link {
+  color: rgb(0, 0, 0) !important;
 }
 
 .logo {

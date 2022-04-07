@@ -1,14 +1,14 @@
 <template>
   <b-container fluid class="footer-main">
     <div class="row justify-content-center my-3">
-      <img src="@/assets/images/logo-brand.png" alt="Logo Brand" />
+      <img src="@/assets/images/white-orange.svg" alt="Logo Brand" />
     </div>
     <div class="row text-center my-3">
       <h2>Subscribe Our Newsletter</h2>
     </div>
 
     <div class="row justify-content-center my-3">
-      <div class="input-group footer-btn w-50">
+      <div class="input-group footer-btn m-75">
         <input
           type="email"
           class="form-control"
@@ -20,7 +20,10 @@
       </div>
     </div>
     <div class="row my-3">
-      <div style="font-size: 3rem" class="d-flex justify-content-center">
+      <div
+        style="font-size: 3rem"
+        class="d-flex justify-content-center footer-icons"
+      >
         <b-icon icon="facebook" class="rounded p-2 s-icon"></b-icon>
         <b-icon icon="twitter" class="rounded p-2 s-icon"></b-icon>
         <b-icon icon="instagram" class="rounded p-2 s-icon"></b-icon>
@@ -46,7 +49,7 @@
 
 <style scoped>
 h2 {
-  color: var(--brown-primary) !important;
+  color: var(--black-secondary) !important;
 }
 a.nav-link {
   color: var(--white-third) !important;
@@ -55,7 +58,8 @@ a.nav-link {
 .footer-btn .btn {
   position: relative;
   z-index: 2;
-  background-color: var(--brown-primary);
+  background-color: var(--black-secondary);
+  color: white !important;
   width: 10rem;
   border: 1px solid black;
 }
@@ -95,12 +99,11 @@ li.nav-item:nth-child(4) {
 }
 
 .footer-main {
-  background-image: linear-gradient(
-      90deg,
-      rgba(36, 14, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.7) 77%
-    ),
-    url("@/assets/images/footerimg.jpg");
+  background-image: url("@/assets/images/Lines.png");
+  background-color: var(--brown-primary);
+  background-size: contain;
+  background-position: center center;
+  z-index: -1;
 
   background-size: cover;
   height: 600px;
@@ -128,6 +131,31 @@ li.nav-item:nth-child(4) {
   }
   a.nav-link {
     color: #fff !important;
+  }
+}
+.footer-icons svg {
+  fill: var(--black-secondary);
+}
+
+.footer-main .router-link-active a {
+  background: #000000 !important;
+  color: #fff !important;
+}
+
+.footer-btn.input-group {
+  width: 75%;
+}
+</style>
+
+<style lang="scss" scoped>
+@media (max-width: 450px) {
+  .footer-btn .btn {
+    width: 6rem;
+  }
+  .footer-main .nav-links li.nav-item {
+    padding-right: 5px;
+    border-right: 1px solid var(--brown-primary) !important;
+    margin-right: 5px;
   }
 }
 </style>

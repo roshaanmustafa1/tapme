@@ -3,7 +3,7 @@
     <div id="aboutus">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-lg-6">
             <div class="aboutimg">
               <img
                 src="@/assets/images/cardsec2.png"
@@ -17,7 +17,7 @@
               />
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-lg-6">
             <div class="aboutdata">
               <h4>Who We Are <span>------</span></h4>
               <h2>The Best Contact Sharing Experience</h2>
@@ -26,10 +26,12 @@
                 Dolorem non modi incidunt laboriosam rerum animi quasi nobis?
                 Neque, similique amet?
               </p>
-              <BtnBlack
-                href="https://bootstrap-vue.org/docs/components/navbar"
-                btnText="Shop Now"
-              />
+              <div class="aboutsec-btn">
+                <BtnBlack
+                  href="https://bootstrap-vue.org/docs/components/navbar"
+                  btnText="Shop Now"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -37,46 +39,50 @@
     </div>
 
     <div class="aboutcardmain">
-      <h5>YOUR RIDE START HERE.</h5>
-      <h2>Our Facilities & Features</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius adipisci
-        sunt qui facere quia dignissimos, praesentium quisquam molestias natus
-        quam?
-      </p>
+      <div class="card-sec2-data">
+        <h5>YOUR RIDE START HERE.</h5>
+        <h2>Our Facilities & Features</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius adipisci
+          sunt qui facere quia dignissimos, praesentium quisquam molestias natus
+          quam?
+        </p>
+      </div>
       <div class="aboutcard d-flex justify-content-center">
-        <div class="row d-flex justify-content-center">
-          <div class="col-sm-12 col-md-4 aboutcardbox">
-            <div class="svg-icon">
-              <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+        <div class="container">
+          <div class="row d-flex justify-content-center about-card-bottom">
+            <div class="col-sm-12 col-md-4 aboutcardbox">
+              <div class="svg-icon">
+                <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+              </div>
+              <h3>Complete Overhaul</h3>
+              <p>
+                Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
+                qui blandit praesent luptatum
+              </p>
             </div>
-            <h3>Complete Overhaul</h3>
-            <p>
-              Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
-              qui blandit praesent luptatum
-            </p>
-          </div>
 
-          <div class="col-sm-12 col-md-4 aboutcardbox">
-            <div class="svg-icon">
-              <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+            <div class="col-sm-12 col-md-4 aboutcardbox">
+              <div class="svg-icon">
+                <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+              </div>
+              <h3>Complete Overhaul</h3>
+              <p>
+                Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
+                qui blandit praesent luptatum
+              </p>
             </div>
-            <h3>Complete Overhaul</h3>
-            <p>
-              Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
-              qui blandit praesent luptatum
-            </p>
-          </div>
 
-          <div class="col-sm-12 col-md-4 aboutcardbox">
-            <div class="svg-icon">
-              <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+            <div class="col-sm-12 col-md-4 aboutcardbox">
+              <div class="svg-icon">
+                <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+              </div>
+              <h3>Complete Overhaul</h3>
+              <p>
+                Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
+                qui blandit praesent luptatum
+              </p>
             </div>
-            <h3>Complete Overhaul</h3>
-            <p>
-              Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
-              qui blandit praesent luptatum
-            </p>
           </div>
         </div>
       </div>
@@ -85,19 +91,20 @@
 </template>
 <script>
 import BtnBlack from "../components/BtnBlack.vue";
+
 export default {
   components: { BtnBlack },
 };
 </script>
 <style lang="scss" scoped>
 #aboutus {
-  margin: rem 0rem 2rem 0rem;
+  margin: 0rem 0rem 2rem 0rem;
   background: url("@/assets/images/Lines.png");
   background-position: center top;
   background-size: cover;
   padding-top: 150px;
   z-index: -3 !important;
-  height: 80vh;
+  height: 800px;
   transition: 1s all ease-in;
   background-color: #eb8d2b;
   &:hover .about-img2 {
@@ -117,7 +124,7 @@ h4 {
 
 .aboutimg {
   position: relative;
-  height: 60vh;
+  height: 600px;
   transition: 2s all ease-in;
   display: flex;
   align-items: center;
@@ -127,6 +134,7 @@ img.about-img1 {
   position: absolute;
   height: 500px;
   z-index: 3;
+  border-radius: 6px;
 }
 img.about-img2 {
   position: absolute;
@@ -134,10 +142,11 @@ img.about-img2 {
   z-index: 2;
   left: 60px;
   transition: all 1s ease-in;
+  border-radius: 6px;
 }
 
 .aboutdata {
-  height: 60vh;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,15 +165,15 @@ img.about-img2 {
 .aboutcardmain h2 {
   font-family: var(--font-heading) !important;
   font-size: 60px !important;
-  padding: 10px;
+  margin-bottom: 0px;
   color: var(--brown-primary);
 }
 .aboutcardmain p {
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 .aboutcard {
-  padding: 20px 200px;
+  padding: 20px 0px;
 
   svg.bi-credit-card2-front.b-icon.bi {
     font-size: 4rem;
@@ -232,5 +241,18 @@ svg.bi-credit-card2-front.b-icon.bi {
 }
 .aboutcardmain .aboutcardbox p {
   padding: 10px 30px;
+}
+</style>
+
+<style lang="scss" scoped>
+@media (max-width: 768px) {
+  #aboutus {
+    height: auto;
+  }
+  img.about-img2 {
+    left: initial;
+  }
+}
+@media (max-width: 450px) {
 }
 </style>

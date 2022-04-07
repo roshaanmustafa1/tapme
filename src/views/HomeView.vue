@@ -4,7 +4,7 @@
     <section id="home">
       <div class="container">
         <div class="row align-item-center">
-          <div class="col-sm-12 col-lg-6 firsthalf">
+          <div class="col-sm-12 col-md-6 firsthalf">
             <div class="home-text">
               <h1>TAPME Say's</h1>
               <p>first impression is the last impression</p>
@@ -12,31 +12,25 @@
                 <BtnBrown
                   href="https://bootstrap-vue.org/docs/components/navbar"
                   btnbrownText="Shop Now"
+                  class="home-btn1"
                 />
 
                 <BtnBlack
                   href="https://bootstrap-vue.org/docs/components/navbar"
                   btnText="subscribe"
+                  class="home-btn2"
                 />
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-lg-6 home-img-sec">
+          <div class="col-sm-12 col-md-6 home-img-sec">
             <div class="home-img">
-              <!-- <img
-                src="@/assets/images/HomeBack.png"
-                alt="sec-1-home"
-                class="img-fluid heroimgback"
-              /> -->
               <img
                 src="@/assets/images/heroseccards.png"
                 alt="sec-1-home"
                 class="img-fluid heroimgfront"
               />
             </div>
-          </div>
-          <div class="col-12 text-center">
-            <b-icon icon="chevron-down" class="levitating"></b-icon>
           </div>
         </div>
       </div>
@@ -60,7 +54,7 @@
                 </p>
               </div>
             </div>
-            <div class="col-md-5 d-flex justify-content-end">
+            <div class="col-md-5 d-flex justify-content-end feature_img-box">
               <img
                 src="@/assets/images/service-1.png"
                 alt="feature_img"
@@ -277,7 +271,7 @@
             </div>
           </div>
           <div
-            class="col-sm-12 col-md-8 d-flex justify-content-center flex-column ps-5"
+            class="col-sm-12 col-md-8 d-flex justify-content-center flex-column ps-5 sec3tap"
           >
             <h4>Contact Is Just Now Tap Away <span></span></h4>
             <h1>Tapme Change the way to share the contact</h1>
@@ -297,18 +291,16 @@
     </section>
 
     <!-- Home Section 2 Ends  -->
-
-    <SliderCards />
   </div>
 </template>
 
 <script>
 import BtnBrown from "../components/BtnBrown.vue";
-import SliderCards from "../components/SliderCards.vue";
+
 import BtnBlack from "../components/BtnBlack.vue";
 export default {
   name: "HomeView",
-  components: { BtnBrown, BtnBlack, SliderCards },
+  components: { BtnBrown, BtnBlack },
 };
 </script>
 <!-- Home Section 1 style Starts  -->
@@ -332,7 +324,7 @@ p {
 
 .home-text h1 {
   font-size: 74px;
-  color: var(--brown-primary);
+  color: var(--black-secondary);
   font-family: var(--font-heading);
 }
 .home .firssthalf {
@@ -348,6 +340,8 @@ p {
 .home-img {
   position: relative;
   height: 100vh;
+  justify-content: end;
+  display: flex;
 }
 
 img.img-fluid.heroimgfront {
@@ -363,10 +357,9 @@ img.img-fluid.heroimgback {
 img.img-fluid.heroimgfront {
   position: absolute;
   z-index: 12;
-  height: 65vh;
+  height: 600px;
   top: 50%;
   transform: translate(0, -50%);
-  right: 140px;
 }
 
 img.img-fluid.heroimgback {
@@ -380,6 +373,7 @@ img.img-fluid.heroimgback {
   animation: levitation 1s infinite;
   animation-direction: alternate-reverse;
   transform: translate(0, -50%);
+  right: 10px;
 }
 
 @keyframes levitation {
@@ -397,7 +391,7 @@ img.img-fluid.heroimgback {
   background-position: center top;
   background-size: cover;
   z-index: -1;
-  margin: 50px 0px;
+  margin: 50px 0px 0px 0px;
   height: calc(100vh - 95px);
   display: flex;
   align-items: center;
@@ -439,9 +433,6 @@ img.sec2nfc {
 /* Home Section 1 style Starts*/
 
 /* Home Features style Starts*/
-section#features {
-  margin-top: 20px;
-}
 
 #features .title {
   height: 800px;
@@ -538,14 +529,16 @@ svg:not(:root).svg-inline--fa {
   box-shadow: 0 0.938rem 3.5rem 2px rgb(0 0 0 / 60%);
 }
 
-.levitating {
-  font-size: 40px;
-  margin-top: -50px;
-  // animation: levitate  1s infinite;
-  // animation-direction: alternate-reverse;
-}
+// .down-icon-call-box svg {
+//   font-size: 40px;
+//   height: 40px;
+//   margin-top: -50px;
+//   z-index: 100;
+//   animation: levitate 1s infinite;
+//   animation-direction: alternate-reverse;
+// }
 
-// @keyframes levitate  {
+// @keyframes levitate {
 //   from {
 //     margin-top: -20px;
 //   }
@@ -554,5 +547,11 @@ svg:not(:root).svg-inline--fa {
 //   }
 // }
 
-/* Home Features style ends*/ ;
+/* Home Features style ends*/
+
+@media (max-width: 450px) {
+  .heroimgfront {
+    right: initial !important;
+  }
+}
 </style>
