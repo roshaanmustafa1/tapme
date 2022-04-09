@@ -3,88 +3,11 @@
     <div class="shopus">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-4 product-details">
-            <div class="product-img">
-              <img
-                src="@/assets/images/products/product-1.jpg"
-                class="p-img-1"
-                alt="img-1"
-              />
-              <img
-                src="@/assets/images/products/product-2.jpg"
-                class="p-img-2"
-                alt="img-2"
-              />
-            </div>
-
-            <div class="product-price">
-              <div class="price">
-                <div class="woocommerce-Price-amount amount">
-                  <bdi>
-                    <span class="woocommerce-Price-currencySymbol">Rs.</span>
-                    1500.00</bdi
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="product-title">
-              <h4><a href="#"></a>Black & White Premium Card</h4>
-            </div>
-            <div class="product-description text-center">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, sapiente?
-              </p>
-            </div>
-            <div class="product-detaild-button">
-              <BtnBrown
-                href="https://bootstrap-vue.org/docs/components/navbar"
-                btnbrownText="Shop Now"
-              />
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 product-details">
-            <div class="product-img">
-              <img
-                src="@/assets/images/products/product-1.jpg"
-                class="p-img-1"
-                alt="img-1"
-              />
-              <img
-                src="@/assets/images/products/product-2.jpg"
-                class="p-img-2"
-                alt="img-2"
-              />
-            </div>
-
-            <div class="product-price">
-              <div class="price">
-                <div class="woocommerce-Price-amount amount">
-                  <bdi>
-                    <span class="woocommerce-Price-currencySymbol">Rs.</span>
-                    1500.00</bdi
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="product-title">
-              <h4><a href="#"></a>Black & White Premium Card</h4>
-            </div>
-            <div class="product-description text-center">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, sapiente?
-              </p>
-            </div>
-            <div class="product-detaild-button">
-              <BtnBlack
-                href="https://bootstrap-vue.org/docs/components/navbar"
-                btnText="Shop Now"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-md-4 product-details">
+          <div
+            class="col-sm-12 col-md-4 product-details"
+            v-for="(item, index) in shopProduct"
+            :key="index"
+          >
             <div class="product-img">
               <img
                 src="@/assets/images/products/product-1.jpg"
@@ -131,21 +54,79 @@
 </template>
 <script>
 import BtnBrown from "../components/BtnBrown.vue";
-import BtnBlack from "../components/BtnBlack.vue";
 
 export default {
   components: {
     BtnBrown,
-    BtnBlack,
+  },
+  data() {
+    return {
+      shopProduct: [
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+        {
+          PTitle: "Product1",
+          PPrice: 200,
+          PDescription:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
+        },
+      ],
+    };
   },
 };
 </script>
 
 <style scoped>
 .shopus {
-  height: 1200px;
+  min-height: 1200px;
   padding: 200px 0px 0px 0px;
-  margin-bottom: 200px px;
+  margin-bottom: 200px;
 }
 
 .product-details {

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <a class="btn btn1 me-2" :href="href">{{ btnbrownText }}</a>
+    <a class="btn btn1" :class="[Class]" :href="href">{{ btnbrownText }}</a>
   </div>
 </template>
 <script>
 export default {
-  props: ["btnbrownText", "href"],
+  props: ["btnbrownText", "href", "Class"],
 };
 </script>
 <style scoped>

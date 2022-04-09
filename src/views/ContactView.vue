@@ -45,6 +45,7 @@
                 type="text"
                 placeholder="Enter Your First Name"
                 required
+                v-model="contactForm.firstName"
               ></b-form-input
             ></b-form>
           </div>
@@ -54,6 +55,7 @@
                 type="text"
                 placeholder="Enter Your Last Name"
                 required
+                v-model="contactForm.lastName"
               ></b-form-input
             ></b-form>
           </div>
@@ -64,6 +66,7 @@
                 type="text"
                 placeholder="Enter Email"
                 required
+                v-model="contactForm.email"
               ></b-form-input
             ></b-form>
           </div>
@@ -73,6 +76,7 @@
                 type="text"
                 placeholder="Enter Subject"
                 required
+                v-model="contactForm.subject"
               ></b-form-input
             ></b-form>
           </div>
@@ -83,6 +87,7 @@
               placeholder="Enter something..."
               rows="3"
               max-rows="6"
+              v-model="contactForm.message"
             ></b-form-textarea>
           </div>
 
@@ -113,6 +118,13 @@
 import BtnBlack from "../components/BtnBlack.vue";
 export default {
   components: { BtnBlack },
+  data() {
+    return {
+      contactForm: [
+        { firstName: "", lastName: "", email: "", subject: "", message: "" },
+      ],
+    };
+  },
 };
 </script>
 
