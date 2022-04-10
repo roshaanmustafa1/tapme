@@ -153,6 +153,15 @@ input::placeholder {
     transition: all 0.2s ease-in;
   }
 }
+.navloginbutton {
+  background: #2c2c2c !important;
+  color: var(--brown-primary) !important;
+  .navloginbutton:hover {
+    color: #2c2c2c !important;
+    z-index: 99;
+    border: 1px solid #2c2c2c;
+  }
+}
 
 .scrolled .mainheader {
   background-color: rgb(0, 0, 0) !important;
@@ -168,6 +177,7 @@ input::placeholder {
   }
   .navloginbutton {
     color: white !important;
+    background-color: transparent !important;
   }
 }
 </style>

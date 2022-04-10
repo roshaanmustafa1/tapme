@@ -1,7 +1,7 @@
 <template>
   <div id="pro-quantity" class="d-flex">
     <div
-      class="quantity-counter d-flex justify-content-center align-items-center"
+      class="quantity-counter d-flex justify-content-center align-items-center border"
     >
       <button class="minus" @click="decreament">
         <b-icon icon="dash" aria-hidden="true"></b-icon>
@@ -52,7 +52,7 @@ input[type="number"] {
 .counter input {
   text-align: center;
   border-radius: 0px;
-  border: 2px solid grey;
+  border: 0;
 }
 
 #pro-quantity {

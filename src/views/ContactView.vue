@@ -120,9 +120,13 @@ export default {
   components: { BtnBlack },
   data() {
     return {
-      contactForm: [
-        { firstName: "", lastName: "", email: "", subject: "", message: "" },
-      ],
+      contactForm: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
     };
   },
 };
@@ -225,7 +229,7 @@ input::placeholder {
 }
 
 #contactusmain {
-  background: url("@/assets/images/Lines.png");
+  background: url("@/assets/images/lineslight.png");
   z-index: -1 !important;
   background-size: contain;
   background-position: center center;

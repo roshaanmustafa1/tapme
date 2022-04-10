@@ -6,7 +6,7 @@
           <div
             class="d-flex justify-content-between align-items-baseline mt-4 mb-4 px-2 close-icon"
           >
-            <h5 class="text-dark">Cart</h5>
+            <h5 class="text-dark">Items In Your Cart</h5>
             <button class="btn p-0" @click="hide">
               <b-icon icon="x" aria-hidden="true"></b-icon>
             </button>
@@ -19,7 +19,7 @@
                 width="130"
               />
             </div>
-            <div class="col-sm-12 col-md-8 cart-heading pe-3">
+            <div class="col-sm-12 col-md-8 cart-heading px-3">
               <h4
                 class="pb-2 d-flex justify-content-between align-items-baselineF"
               >
@@ -42,7 +42,7 @@
 
               <div class="col-sm-12 col-md-12">
                 <router-link
-                  to="checkout"
+                  to="/checkout"
                   tag="button"
                   class="btn btn-dark w-100 checkout-btn btn-square"
                   >Check Out</router-link
@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss">
 div#sidebar-right {
-  width: 500px;
+  width: 400px;
 }
 </style>
 
@@ -100,7 +100,9 @@ div#sidebar-right {
 }
 
 .cart-img {
-  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .product-cart svg {
   font-size: 16px;

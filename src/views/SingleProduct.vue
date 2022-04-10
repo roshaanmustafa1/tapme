@@ -162,7 +162,7 @@ export default {
   data() {
     return {
       isAdded: false,
-      cardDetails: [{ name: "", email: "", phoneNo: "" }],
+      cardDetails: { name: "", email: "", phoneNo: "" },
     };
   },
   methods: {

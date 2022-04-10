@@ -41,14 +41,15 @@
 
     <section id="features">
       <div class="title">
-        <div class="container-fluid">
+        <div class="container">
           <div class="row">
-            <div class="col-md-5 offset-md-1 d-flex align-items-end">
+            <div class="col-md-6 d-flex align-items-end position-relative">
               <div class="feature_middle">
                 <img
                   src="@/assets/images/horizontal-card.png"
                   alt="feature_horizontal_img"
                   class="feature_horizontal_img"
+                  width="400px"
                 />
                 <h4>Simply Awesome <span></span></h4>
                 <h2>Our Special Feature's</h2>
@@ -59,7 +60,9 @@
                 </p>
               </div>
             </div>
-            <div class="col-md-5 d-flex justify-content-end feature_img-box">
+            <div
+              class="col-md-6 d-flex justify-content-end feature_img-box align-items-baseline"
+            >
               <img
                 src="@/assets/icons/mobile.svg"
                 alt="feature_img"
@@ -67,9 +70,11 @@
               />
             </div>
           </div>
-          <div class="container-fluid margin-_top_up ipad-px-30">
+          <div class="container margin-_top_up ipad-px-30">
             <div class="row pb-5">
-              <div class="col-sm-12 col-lg-6 col-md-6 offset-lg-1">
+              <div
+                class="col-sm-12 col-lg-12 col-md-12 d-flex justify-content-center"
+              >
                 <div class="row">
                   <div
                     class="col-sm-6 col-lg-6"
@@ -263,7 +268,7 @@ img.img-fluid.heroimgback {
   background-position: center top;
   background-size: cover;
   z-index: -1;
-  margin: 50px 0px 0px 0px;
+  margin: 50px 0px 50px 0px;
   height: calc(100vh - 95px);
   display: flex;
   align-items: center;
@@ -272,11 +277,12 @@ img.img-fluid.heroimgback {
 .position-relative {
   position: relative !important;
   height: 60vh;
+  padding-bottom: 50px;
 }
 img.sec2imgfront {
   position: absolute;
   top: 0;
-  height: 60vh;
+  height: 650px;
 }
 img.sec2nfc {
   position: absolute;
@@ -400,6 +406,11 @@ svg:not(:root).svg-inline--fa {
   color: var(--text-white);
   background: var(--bg-gradient);
   box-shadow: 0 0.938rem 3.5rem 2px rgb(0 0 0 / 60%);
+}
+
+.feature_horizontal_img {
+  position: absolute;
+  top: 0px;
 }
 
 // .down-icon-call-box svg {
