@@ -3,21 +3,24 @@
     <div class="shopus">
       <div class="container">
         <div class="row">
-          <div
+          <router-link
             class="col-sm-12 col-md-4 product-details"
             v-for="(item, index) in shopProduct"
             :key="index"
+            :to="'/shop/' + index"
           >
             <div class="product-img">
               <img
                 src="@/assets/images/products/product-1.jpg"
                 class="p-img-1"
                 alt="img-1"
+                width="400px"
               />
               <img
                 src="@/assets/images/products/product-2.jpg"
                 class="p-img-2"
                 alt="img-2"
+                width="400px"
               />
             </div>
 
@@ -32,7 +35,7 @@
               </div>
             </div>
             <div class="product-title">
-              <h4><a href="#"></a>Black & White Premium Card</h4>
+              <h4><a href="#"></a>{{ item.PTitle }}</h4>
             </div>
             <div class="product-description text-center">
               <p>
@@ -46,7 +49,7 @@
                 btnbrownText="Shop Now"
               />
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -63,7 +66,7 @@ export default {
     return {
       shopProduct: [
         {
-          PTitle: "Product1",
+          PTitle: "Black & White Premium Card",
           PPrice: 200,
           PDescription:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",

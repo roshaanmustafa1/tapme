@@ -20,19 +20,67 @@
             </div>
             <span class="horizontalline"></span>
 
-            <div class="s-pro-img d-flex justify-content-center my-5">
-              <div class="imgWrapper">
-                <img src="@/assets/images/products/product-1.jpg" alt="img-1" />
+            <div class="s-pro-img d-flex justify-content-center my-5 w-75">
+              <div
+                class="imgWrapper justify-content-end d-flex position-relative"
+              >
+                <img
+                  src="@/assets/images/products/blankfrontcard.png"
+                  alt="img-1"
+                  width="300px"
+                />
+                <div class="name-field-box">
+                  <p class="position-absolute sin-p-text name-field">
+                    {{ cardDetails.name }}
+                  </p>
+                </div>
+                <div class="phone-field-box">
+                  <p class="position-absolute sin-p-text phone-field">
+                    {{ cardDetails.phoneNo }}
+                  </p>
+                </div>
+                <div class="email-field-box">
+                  <p class="position-absolute sin-p-text email-field">
+                    {{ cardDetails.email }}
+                  </p>
+                </div>
               </div>
               <div class="imgWrapper">
-                <img src="@/assets/images/products/product-2.jpg" alt="img-2" />
-              </div>
-              <div class="imgWrapper">
-                <img src="@/assets/images/products/product-1.jpg" alt="img-3" />
+                <img
+                  src="@/assets/images/products/productcardback.png"
+                  alt="img-2"
+                  width="300px"
+                />
               </div>
             </div>
 
             <span class="horizontalline"></span>
+
+            <div class="mt-5 w-50 my-4">
+              <h4 class="text-center text-capitalize mb-4">
+                enter your details
+              </h4>
+              <b-form-input
+                v-model="cardDetails.name"
+                placeholder="Enter your name"
+                class="mb-2"
+                maxlength="25"
+                block
+              ></b-form-input>
+              <b-form-input
+                v-model="cardDetails.phoneNo"
+                placeholder="Enter your Phone"
+                class="mb-2"
+                type="number"
+                block
+              ></b-form-input>
+              <b-form-input
+                v-model="cardDetails.email"
+                placeholder="Enter your Email"
+                type="email"
+                block
+              ></b-form-input>
+            </div>
 
             <p class="s-pro-des mt-5 w-50 text-center">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
@@ -44,27 +92,22 @@
             <div class="product-buttons d-flex justify-content-center my-3">
               <product-quantity />
               <btn-brown
-                v-if="isAdded === false"
                 @click.native="toggleBtn"
                 btnbrownText="Add To Cart"
+                Class="me-2"
               />
 
               <btn-brown
                 v-b-toggle.sidebar-right
-                v-else
+                v-if="isAdded === true"
                 btnbrownText="View Cart"
-              />
-
-              <btn-black
-                href="https://bootstrap-vue.org/docs/components/navbar"
-                btnText="# Wishlist"
               />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <section>
+    <section class="mt-5">
       <div class="container">
         <div class="row">
           <div class="pro-model-details text-center">
@@ -111,14 +154,15 @@
 
 <script>
 import ProductQuantity from "@/components/ProductQuantity.vue";
-import BtnBlack from "@/components/BtnBlack.vue";
+
 import BtnBrown from "@/components/BtnBrown.vue";
 
 export default {
-  components: { ProductQuantity, BtnBlack, BtnBrown },
+  components: { ProductQuantity, BtnBrown },
   data() {
     return {
       isAdded: false,
+      cardDetails: [{ name: "", email: "", phoneNo: "" }],
     };
   },
   methods: {
@@ -131,7 +175,7 @@ export default {
 
 <style lang="scss" scoped>
 .singleproductmain {
-  height: calc(100vh + 20px);
+  min-height: 1200px;
   padding-top: 200px;
 }
 
@@ -152,7 +196,6 @@ export default {
 }
 
 .s-pro-img img {
-  width: 100%;
   padding: 0px 10px;
 }
 
@@ -174,5 +217,60 @@ export default {
 }
 .pro-model-details a {
   font-family: var(--font-heading);
+}
+
+.sin-p-text {
+  z-index: 999;
+  top: 455px;
+  left: 78px;
+  color: white;
+}
+
+.name-field {
+  z-index: 999;
+  top: 85px;
+  left: 50%;
+  color: #252525;
+  font-size: 28px !important;
+  font-weight: 800;
+  max-width: 180px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  line-height: 32px;
+  text-align: center;
+  transform: translate(-50%, 0px);
+}
+
+.phone-field {
+  z-index: 999;
+  top: 305px;
+  left: 50%;
+  color: white;
+  font-weight: 400;
+  transform: translate(-50%);
+  font-size: 14px !important;
+}
+
+.email-field {
+  z-index: 999;
+  top: 338px;
+  left: 50%;
+  color: white;
+  font-weight: 400;
+  transform: translate(-50%);
+  max-width: 300px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  font-size: 14px !important;
+}
+
+.form-control {
+  text-align: center;
+}
+
+.form-control::placeholder {
+  text-align: center;
+  text-transform: capitalize;
+  color: #000000a3 !important;
 }
 </style>

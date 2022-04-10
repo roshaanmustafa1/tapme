@@ -13,7 +13,11 @@
           </div>
           <div class="row px-2 product-cart pt-4">
             <div class="col-sm-12 col-md-4 cart-img">
-              <img src="@/assets/images/products/product-1.jpg" alt="s" />
+              <img
+                src="@/assets/images/products/product-1.jpg"
+                alt="s"
+                width="130"
+              />
             </div>
             <div class="col-sm-12 col-md-8 cart-heading pe-3">
               <h4

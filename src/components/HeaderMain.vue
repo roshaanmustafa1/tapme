@@ -13,9 +13,9 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <router-link to="/" tag="b-nav-item" exact>Home</router-link>
-            <router-link to="shop" tag="b-nav-item">Shop</router-link>
-            <router-link to="contact" tag="b-nav-item">Contact Us</router-link>
-            <router-link to="about" tag="b-nav-item">About Us</router-link>
+            <router-link to="/shop" tag="b-nav-item">Shop</router-link>
+            <router-link to="/contact" tag="b-nav-item">Contact Us</router-link>
+            <router-link to="/about" tag="b-nav-item">About Us</router-link>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->

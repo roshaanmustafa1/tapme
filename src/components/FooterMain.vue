@@ -1,10 +1,10 @@
 <template>
-  <b-container fluid class="footer-main">
+  <b-container fluid class="footer-main" id="subscribeSec">
     <div class="row justify-content-center my-3">
       <img src="@/assets/images/white-orange.svg" alt="Logo Brand" />
     </div>
     <div class="row text-center my-3">
-      <h2>Subscribe Our Newsletter</h2>
+      <h2 class="text-white">Subscribe Our Newsletter</h2>
     </div>
 
     <div class="row justify-content-center my-3">
@@ -48,9 +48,6 @@
 </template>
 
 <style scoped>
-h2 {
-  color: var(--black-secondary) !important;
-}
 a.nav-link {
   color: var(--white-third) !important;
 }
@@ -58,13 +55,15 @@ a.nav-link {
 .footer-btn .btn {
   position: relative;
   z-index: 2;
-  background-color: var(--black-secondary);
+  background-color: var(--brown-primary);
   color: white !important;
-  width: 10rem;
-  border: 1px solid black;
+  width: 120px;
+  border: 1px solid var(--brown-primary);
+  border-radius: 0 3px 3px 0;
 }
 .footer-btn input.form-control {
-  border: 1px solid black;
+  border: 1px solid var(--brown-primary);
+  border-radius: 3px 0 0 3px;
 }
 
 .footer-main img {
@@ -100,7 +99,7 @@ li.nav-item:nth-child(4) {
 
 .footer-main {
   background-image: url("@/assets/images/Lines.png");
-  background-color: var(--brown-primary);
+  background-color: #000;
   background-size: contain;
   background-position: center center;
   z-index: -1;
@@ -134,16 +133,20 @@ li.nav-item:nth-child(4) {
   }
 }
 .footer-icons svg {
-  fill: var(--black-secondary);
+  fill: #fff;
 }
 
 .footer-main .router-link-active a {
-  background: #000000 !important;
+  background: var(--brown-primary) !important;
   color: #fff !important;
 }
 
 .footer-btn.input-group {
-  width: 75%;
+  width: 500px;
+}
+
+.copyright {
+  border-top: 1px solid #f2f2f252;
 }
 </style>
 

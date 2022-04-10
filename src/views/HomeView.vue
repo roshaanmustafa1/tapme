@@ -12,11 +12,11 @@
                 <BtnBrown
                   href="https://bootstrap-vue.org/docs/components/navbar"
                   btnbrownText="Shop Now"
-                  class="home-btn1"
+                  class="home-btn1 me-2"
                 />
 
                 <BtnBlack
-                  href="https://bootstrap-vue.org/docs/components/navbar"
+                  href="#subscribeSec"
                   btnText="subscribe"
                   class="home-btn2"
                 />
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="container-fluid margin-_top_up ipad-px-30">
-            <div class="row">
+            <div class="row pb-5">
               <div class="col-sm-12 col-lg-6 col-md-6 offset-lg-1">
                 <div class="row">
                   <div
