@@ -140,7 +140,7 @@ export default {
 }
 
 .product-img img {
-  border-radius: 30px;
+  border-radius: 5px;
 }
 
 .amount {

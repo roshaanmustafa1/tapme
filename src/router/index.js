@@ -36,7 +36,7 @@ const routes = [
     component: ContactView,
   },
   {
-    path: "/login-signup",
+    path: "/login",
     name: "login-signup",
     component: LoginSignup,
   },
