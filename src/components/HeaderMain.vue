@@ -19,7 +19,7 @@
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ms-auto">
+          <b-navbar-nav class="ms-auto naviconbox">
             <b-nav-item-dropdown class="ms-auto searchDropdown" right
               ><template #button-content>
                 <span><b-icon icon="Search"></b-icon></span>
@@ -48,7 +48,7 @@
             </b-nav-item>
             <b-nav-item
               ><router-link to="/login"
-                ><btn-brown btnbrownText="Login"
+                ><btn-brown btnbrownText="Login" Class="navloginbutton"
               /></router-link>
             </b-nav-item>
           </b-navbar-nav>
@@ -80,6 +80,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navButton {
+  transition: 0.1s;
+}
+a.btn.btn1 {
+  color: white;
+}
 nav.navbar {
   padding: 0px 35px;
 }
@@ -135,6 +141,11 @@ input::placeholder {
   border-radius: 3px;
 }
 
+.naviconbox {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   width: 90px;
   height: 65px;
@@ -154,6 +165,9 @@ input::placeholder {
   }
   .logo use {
     fill: #fff !important;
+  }
+  .navloginbutton {
+    color: white !important;
   }
 }
 </style>
