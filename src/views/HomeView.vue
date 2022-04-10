@@ -9,11 +9,9 @@
               <h1>TAPME Say's</h1>
               <p>first impression is the last impression</p>
               <div class="home-download-btn d-flex">
-                <BtnBrown
-                  href="https://bootstrap-vue.org/docs/components/navbar"
-                  btnbrownText="Shop Now"
-                  class="home-btn1 me-2"
-                />
+                <router-link to="/shop"
+                  ><BtnBrown btnbrownText="Shop Now" class="home-btn1 me-2"
+                /></router-link>
 
                 <BtnBlack
                   href="#subscribeSec"
