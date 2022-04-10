@@ -46,6 +46,11 @@
             <b-nav-item
               ><b-icon icon="cart-fill" v-b-toggle.sidebar-right></b-icon>
             </b-nav-item>
+            <b-nav-item
+              ><router-link to="/login"
+                ><btn-brown btnbrownText="Login"
+              /></router-link>
+            </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </div>
@@ -56,9 +61,10 @@
 
 <script>
 import SideCart from "@/components/SideCart";
+import BtnBrown from "./BtnBrown.vue";
 export default {
   name: "HeaderMain",
-  components: { SideCart },
+  components: { SideCart, BtnBrown },
   data() {
     return { scrollPosition: null };
   },
@@ -126,6 +132,7 @@ input::placeholder {
 }
 .mainheader a.nav-link {
   color: rgb(0, 0, 0) !important;
+  border-radius: 3px;
 }
 
 .logo {
