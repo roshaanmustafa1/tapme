@@ -90,7 +90,6 @@
               deserunt cupiditate eius voluptatem repellat alias aspernatur.
             </p>
             <div class="product-buttons d-flex justify-content-center my-3">
-              <product-quantity />
               <btn-brown
                 @click.native="toggleBtn"
                 btnbrownText="Add To Cart"
@@ -153,16 +152,14 @@
 </template>
 
 <script>
-import ProductQuantity from "@/components/ProductQuantity.vue";
-
 import BtnBrown from "@/components/BtnBrown.vue";
 
 export default {
-  components: { ProductQuantity, BtnBrown },
+  components: { BtnBrown },
   data() {
     return {
       isAdded: false,
-      cardDetails: { name: "", email: "", phoneNo: "" },
+             : { name: "", email: "", phoneNo: "" },
     };
   },
   methods: {
