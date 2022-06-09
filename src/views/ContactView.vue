@@ -8,23 +8,26 @@
               <b-icon icon="map" aria-hidden="true"></b-icon>
             </div>
             <h2>Address</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              40 E 1 Shahrah-e-Hazrat Imam Hussain, Block E1 Block E 1 Gulberg
+              III, Lahore, Punjab 54660
+            </p>
           </div>
 
           <div class="col-sm-12 col-md-4 contacticonbox">
             <div class="contact-icon">
               <b-icon icon="mailbox" aria-hidden="true"></b-icon>
             </div>
-            <h2>Address</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h2>Email</h2>
+            <p>2193257@ncbae.edu.pk</p>
           </div>
 
           <div class="col-sm-12 col-md-4 contacticonbox">
             <div class="contact-icon">
               <b-icon icon="telephone-inbound" aria-hidden="true"></b-icon>
             </div>
-            <h2>Address</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h2>Mobile No</h2>
+            <p>+92 313 4781 894</p>
           </div>
         </div>
       </div>

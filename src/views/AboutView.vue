@@ -22,15 +22,15 @@
               <h4>Who We Are <span>------</span></h4>
               <h2>The Best Contact Sharing Experience</h2>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Dolorem non modi incidunt laboriosam rerum animi quasi nobis?
-                Neque, similique amet?
+                Where do you think the majority of your printed cards end up?
+                They may sit in the pocket, pack or vehicle, or best-case
+                scenario, they land on your new contacts desk (for some time)
+                Unfortunately, the larger part ends up in the receptacle.
               </p>
               <div class="aboutsec-btn">
-                <BtnBlack
-                  href="https://bootstrap-vue.org/docs/components/navbar"
-                  btnText="Shop Now"
-                />
+                <router-link to="/shop"
+                  ><BtnBlack btnText="Shop Now"
+                /></router-link>
               </div>
             </div>
           </div>
@@ -53,35 +53,26 @@
           <div class="row d-flex justify-content-center about-card-bottom">
             <div class="col-sm-12 col-md-4 aboutcardbox">
               <div class="svg-icon">
-                <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+                <b-icon icon="share-fill" aria-hidden="true"></b-icon>
               </div>
-              <h3>Complete Overhaul</h3>
-              <p>
-                Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
-                qui blandit praesent luptatum
-              </p>
+              <h3>Share</h3>
+              <p>Share and promote your Business.</p>
             </div>
 
             <div class="col-sm-12 col-md-4 aboutcardbox">
               <div class="svg-icon">
-                <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+                <b-icon icon="diagram2-fill" aria-hidden="true"></b-icon>
               </div>
-              <h3>Complete Overhaul</h3>
-              <p>
-                Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
-                qui blandit praesent luptatum
-              </p>
+              <h3>Contact</h3>
+              <p>All your contacts information in one place.</p>
             </div>
 
             <div class="col-sm-12 col-md-4 aboutcardbox">
               <div class="svg-icon">
-                <b-icon icon="credit-card2-front" aria-hidden="true"></b-icon>
+                <b-icon icon="people-fill" aria-hidden="true"></b-icon>
               </div>
-              <h3>Complete Overhaul</h3>
-              <p>
-                Vel illum dolore eu feugiat nulla facilisis at vero eros et accu
-                qui blandit praesent luptatum
-              </p>
+              <h3>Network</h3>
+              <p>Grow your network.</p>
             </div>
           </div>
         </div>
@@ -176,10 +167,12 @@ img.about-img2 {
   padding: 20px 0px;
 
   svg.bi-credit-card2-front.b-icon.bi {
-    font-size: 4rem;
+    font-size: 18px;
   }
 }
-
+.svg-icon svg {
+  font-size: 50px;
+}
 .aboutcardbox {
   display: flex;
   justify-content: center;

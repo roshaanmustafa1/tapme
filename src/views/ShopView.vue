@@ -2,12 +2,14 @@
   <div id="shopusmain">
     <div class="shopus">
       <div class="container">
+        <span class="shop-heading">
+          <h2 class="text-center display-2">Shop Your Choice</h2></span
+        >
         <div class="row">
-          <router-link
+          <div
             class="col-sm-12 col-md-4 product-details"
             v-for="(item, index) in shopProduct"
             :key="index"
-            :to="'/shop/' + index"
           >
             <div class="product-img">
               <img
@@ -29,7 +31,7 @@
                 <div class="woocommerce-Price-amount amount">
                   <bdi>
                     <span class="woocommerce-Price-currencySymbol">Rs.</span>
-                    1500.00</bdi
+                    {{ item.PPrice }}</bdi
                   >
                 </div>
               </div>
@@ -43,13 +45,20 @@
                 Corrupti, sapiente?
               </p>
             </div>
-            <div class="product-detaild-button">
-              <BtnBrown
-                href="https://bootstrap-vue.org/docs/components/navbar"
-                btnbrownText="Shop Now"
+            <div class="product-detaild-button d-flex">
+              <BtnBlack
+                btnText="Add to cart"
+                Class="me-2"
+                @click.native="updataCart(index)"
               />
+              <router-link :to="'/shop/' + index">
+                <BtnBrown
+                  href="https://bootstrap-vue.org/docs/components/navbar"
+                  btnbrownText="Quick View"
+                />
+              </router-link>
             </div>
-          </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -57,10 +66,12 @@
 </template>
 <script>
 import BtnBrown from "../components/BtnBrown.vue";
+import BtnBlack from "../components/BtnBlack.vue";
 
 export default {
   components: {
     BtnBrown,
+    BtnBlack,
   },
   data() {
     return {
@@ -78,13 +89,13 @@ export default {
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
         },
         {
-          PTitle: "Product1",
+          PTitle: "Product2",
           PPrice: 200,
           PDescription:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
         },
         {
-          PTitle: "Product1",
+          PTitle: "Product3",
           PPrice: 200,
           PDescription:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?",
@@ -121,6 +132,13 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    updataCart(index) {
+      console.log("klfsj");
+      this.$store.dispatch("updateCart", 1);
+      this.$store.dispatch("updateProducts", this.shopProduct[index]);
+    },
   },
 };
 </script>

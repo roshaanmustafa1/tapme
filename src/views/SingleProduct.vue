@@ -83,11 +83,13 @@
             </div>
 
             <p class="s-pro-des mt-5 w-50 text-center">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
-              molestias architecto ea cumque odio sed sit, sapiente asperiores
-              aliquid minus ratione nobis dolorem inventore necessitatibus
-              possimus, voluptates quae eius sunt praesentium placeat. Ab
-              deserunt cupiditate eius voluptatem repellat alias aspernatur.
+              Digital Contact Card is the easiest way to share your, email
+              social media, contact info, website, google map and much more in a
+              contactless way. With Just a Simple “Tap or Scan” , you can
+              instantly share your contact info with everyone you meet, comes
+              with integrated nfc technology, which enables you to transmit your
+              contact details, socials & so much more into any smartphone with
+              no app needed.
             </p>
             <div class="product-buttons d-flex justify-content-center my-3">
               <btn-brown
@@ -114,32 +116,22 @@
               <b-tabs content-class="mt-3" align="center">
                 <b-tab title="Description" active
                   ><p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Perferendis quasi, reiciendis modi quisquam dolorem suscipit
-                    doloribus autem porro? Fugit accusantium pariatur recusandae
-                    est dolor atque explicabo optio consequatur excepturi odit
-                    molestiae dolorem laudantium, sapiente hic eos itaque
-                    consequuntur repellat eum? Facilis sunt rerum repellat quis
-                    consectetur error nesciunt explicabo aliquid.
+                    1. Tap Digital Contact card to NFC enabled phone. 2. Open
+                    the notification.
                   </p></b-tab
                 >
                 <b-tab title="Additional information"
                   ><p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Corporis, dolore! Perferendis obcaecati deleniti saepe quia
-                    laboriosam officiis, sunt dolorem incidunt eveniet,
-                    doloremque quaerat tempore in possimus nulla voluptatibus
-                    quas aperiam accusamus repudiandae excepturi ullam sequi
-                    quod aliquam nostrum! Quisquam, nemo!
+                    No Special Apps Required on Compatible Smartphones. Move
+                    your contact information to well-suited smartphones in only
+                    a few seconds. Most Importantly, update your contacts
+                    information in real time.
                   </p></b-tab
                 >
                 <b-tab title="Shipping &amp; Delivery"
                   ><p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Exercitationem expedita molestiae aperiam aut accusantium
-                    maxime. Odit tempore minus consectetur eos quos aperiam.
-                    Beatae dignissimos voluptatibus incidunt quod voluptate
-                    itaque in!
+                    Share and promote your Business. All your contacts
+                    information in one place. Grow your network.
                   </p></b-tab
                 >
               </b-tabs>
@@ -159,7 +151,7 @@ export default {
   data() {
     return {
       isAdded: false,
-             : { name: "", email: "", phoneNo: "" },
+      cardDetails: { name: "", email: "", phoneNo: "" },
     };
   },
   methods: {

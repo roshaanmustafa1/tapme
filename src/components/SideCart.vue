@@ -11,43 +11,51 @@
               <b-icon icon="x" aria-hidden="true"></b-icon>
             </button>
           </div>
-          <div class="row px-2 product-cart pt-4">
-            <div class="col-sm-12 col-md-4 cart-img">
-              <img
-                src="@/assets/images/products/product-1.jpg"
-                alt="s"
-                width="130"
-              />
-            </div>
-            <div class="col-sm-12 col-md-8 cart-heading px-3">
-              <h4
-                class="pb-2 d-flex justify-content-between align-items-baselineF"
-              >
-                Product Title
-                <b-icon icon="x-circle" aria-hidden="true"></b-icon>
-              </h4>
-
-              <product-quantity />
-            </div>
-
-            <div class="view-cart-checkout row">
-              <div class="col-sm-12 col-md-6">
-                <h5>Total:</h5>
+          <div class="pb-5" style="margin-bottom: 70px">
+            <div
+              class="row px-2 product-cart pt-4"
+              v-for="(product, index) in products"
+              :key="index"
+            >
+              <div class="col-sm-12 col-md-4 cart-img">
+                <img
+                  src="@/assets/images/products/product-1.jpg"
+                  alt="s"
+                  width="130"
+                />
               </div>
-              <div class="col-sm-12 col-md-6">
-                <p class="text-end">
-                  Rs<span>0.00</span><span>(Including Tax)</span>
-                </p>
-              </div>
-
-              <div class="col-sm-12 col-md-12">
-                <router-link
-                  to="/checkout"
-                  tag="button"
-                  class="btn btn-dark w-100 checkout-btn btn-square"
-                  >Check Out</router-link
+              <div class="col-sm-12 col-md-8 cart-heading px-3">
+                <h4
+                  class="pb-2 d-flex justify-content-between align-items-baselineF"
                 >
+                  {{ product.PTitle }}
+                  <b-icon icon="x-circle" aria-hidden="true"></b-icon>
+                </h4>
+
+                <div class="text-dark">
+                  {{ product.PPrice }} x 1 = {{ product.PPrice }}
+                </div>
               </div>
+            </div>
+          </div>
+          <div class="view-cart-checkout row bg-white py-2">
+            <div class="col-sm-12 col-md-6">
+              <h5>Total:</h5>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <p class="text-end">
+                Rs<span>{{ getTotalAmount }}</span
+                ><span>(Including Tax)</span>
+              </p>
+            </div>
+
+            <div class="col-sm-12 col-md-12">
+              <router-link
+                to="/checkout"
+                tag="button"
+                class="btn btn-dark w-100 checkout-btn btn-square"
+                >Check Out</router-link
+              >
             </div>
           </div>
         </template>
@@ -57,9 +65,23 @@
 </template>
 
 <script>
-import ProductQuantity from "@/components/ProductQuantity.vue";
+import { mapState } from "vuex";
 export default {
-  components: { ProductQuantity },
+  data() {
+    return {
+      cartItems: [],
+    };
+  },
+  computed: {
+    ...mapState(["products"]),
+    getTotalAmount() {
+      let total = 0;
+      this.products.forEach((product) => {
+        total += product.PPrice;
+      });
+      return total;
+    },
+  },
 };
 </script>
 

@@ -44,12 +44,27 @@
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item
-              ><b-icon icon="cart-fill" v-b-toggle.sidebar-right></b-icon>
+              ><b-icon
+                icon="cart-fill "
+                class="position-relative"
+                v-b-toggle.sidebar-right
+              ></b-icon>
+              <span
+                class="cartItemsCout badge bg-warning text-dark rounded-pill position-absolute top-0 mt-3"
+                >{{ cartItems }}</span
+              >
             </b-nav-item>
-            <b-nav-item
+            <b-nav-item class="ms-2" v-if="!user.displayName"
               ><router-link to="/login"
                 ><btn-brown btnbrownText="Login" Class="navloginbutton"
               /></router-link>
+            </b-nav-item>
+            <b-nav-item class="ms-2" v-else>
+              <btn-brown
+                btnbrownText="Logout"
+                @click.native="signOut"
+                Class="navloginbutton"
+              />
             </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
@@ -62,15 +77,31 @@
 <script>
 import SideCart from "@/components/SideCart";
 import BtnBrown from "./BtnBrown.vue";
+import { getAuth, signOut } from "firebase/auth";
+import { mapState } from "vuex";
 export default {
   name: "HeaderMain",
   components: { SideCart, BtnBrown },
   data() {
     return { scrollPosition: null };
   },
+  computed: {
+    ...mapState(["cartItems", "user"]),
+  },
   methods: {
     updateScroll() {
       this.scrollPosition = window.scrollY;
+    },
+    signOut() {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          this.$store.dispatch("updateUser", {});
+          this.$toast.success("Success");
+        })
+        .catch((error) => {
+          this.$toast.error(error.message);
+        });
     },
   },
   mounted() {

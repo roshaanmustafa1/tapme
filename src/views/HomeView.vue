@@ -119,10 +119,12 @@
             <h4>Contact Is Just Now Tap Away <span></span></h4>
             <h1>Tapme Change the way to share the contact</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              earum optio asperiores, vitae sunt suscipit animi totam unde,
-              autem fugiat ab atque voluptates architecto quisquam est expedita
-              molestias odio nam!
+              Simply tap or scan your card using any smartphone, with no app or
+              installation required. It’s really that simple! Using NFC
+              technology, the Tapme Contact Card can share all of your
+              information when tapped against a smartphone. No more messing
+              around with old paper business cards, put all the information
+              right where people spend most of their time - their phone!
             </p>
             <BtnBlack
               href="https://bootstrap-vue.org/docs/components/navbar"

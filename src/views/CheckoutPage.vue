@@ -189,11 +189,12 @@
                       support your experience throughout this website, and for
                       other purposes described in our privacy policy.
                     </p>
-                    <router-link
+                    <b-button
                       to="checkout"
                       tag="button"
+                      @click="placeOrder"
                       class="btn btn-dark w-100 checkout-btn btn-square"
-                      >Place Order</router-link
+                      >Place Order</b-button
                     >
                   </div>
                 </div>
@@ -209,11 +210,24 @@
 <script>
 import BtnBlack from "@/components/BtnBlack.vue";
 import ProductQuantity from "@/components/ProductQuantity";
-
+import { doc, setDoc } from "firebase/firestore";
+import { mapState } from "vuex";
 export default {
   components: {
     BtnBlack,
     ProductQuantity,
+  },
+  computed: {
+    ...mapState(["user", "products"]),
+  },
+  methods: {
+    placeOrder() {
+      setDoc(doc(this.$db, "orders", this.user.uid), {
+        name: this.user.displayName,
+        email: this.user.email,
+        products: this.products,
+      });
+    },
   },
 };
 </script>
