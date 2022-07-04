@@ -40,7 +40,7 @@
     <section id="features">
       <div class="title">
         <div class="container">
-          <div class="row">
+          <div class="row position-relative">
             <div class="col-md-6 d-flex align-items-end position-relative">
               <div class="feature_middle">
                 <img
@@ -64,7 +64,12 @@
               <img
                 src="@/assets/icons/mobile.svg"
                 alt="feature_img"
-                class="feature_img"
+                class="feature_img position-absolute"
+              />
+              <img
+                src="@/assets/images/profile.png"
+                alt="feature_img"
+                class="feature_profile_img position-absolute"
               />
             </div>
           </div>
@@ -140,45 +145,45 @@
 </template>
 
 <script>
-import BtnBrown from "../components/BtnBrown.vue";
+import BtnBrown from '../components/BtnBrown.vue'
 
-import BtnBlack from "../components/BtnBlack.vue";
+import BtnBlack from '../components/BtnBlack.vue'
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: { BtnBrown, BtnBlack },
   data() {
     return {
       features: [
-        { title: "Beautiful Design", description: "Lorem Ipsum", icon: "plus" },
+        { title: 'Beautiful Design', description: 'Lorem Ipsum', icon: 'plus' },
         {
-          title: "Pure and Simple",
-          description: "Lorem Ipsum",
-          icon: "check2-square",
+          title: 'Pure and Simple',
+          description: 'Lorem Ipsum',
+          icon: 'check2-square',
         },
         {
-          title: "Color Schemes",
-          description: "Lorem Ipsum",
-          icon: "circle-square",
+          title: 'Color Schemes',
+          description: 'Lorem Ipsum',
+          icon: 'circle-square',
         },
         {
-          title: "Wow Animations",
-          description: "Lorem Ipsum",
-          icon: "emoji-dizzy",
+          title: 'Wow Animations',
+          description: 'Lorem Ipsum',
+          icon: 'emoji-dizzy',
         },
         {
-          title: "Excellent Everything",
-          description: "Lorem Ipsum",
-          icon: "bullseye",
+          title: 'Excellent Everything',
+          description: 'Lorem Ipsum',
+          icon: 'bullseye',
         },
         {
-          title: "Easy To Customize",
-          description: "Lorem Ipsum",
-          icon: "card-checklist",
+          title: 'Easy To Customize',
+          description: 'Lorem Ipsum',
+          icon: 'card-checklist',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 <!-- Home Section 1 style Starts  -->
 <style scoped lang="scss">
@@ -193,7 +198,7 @@ p {
 }
 
 #home {
-  background-image: url("../assets/images/HomeBack.png");
+  background-image: url('../assets/images/HomeBack.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
@@ -264,7 +269,7 @@ img.img-fluid.heroimgback {
 
 /* Home Section 1 style ends*/
 .section2 {
-  background: url("@/assets/images/sec2back.png");
+  background: url('@/assets/images/sec2back.png');
   background-position: center top;
   background-size: cover;
   z-index: -1;
@@ -340,7 +345,7 @@ img.sec2nfc {
 }
 .feature_img {
   text-align: right;
-  max-width: 45% !important;
+  max-width: 300px !important;
 }
 .feature_img img {
   max-width: 60% !important;
@@ -408,11 +413,6 @@ svg:not(:root).svg-inline--fa {
   box-shadow: 0 0.938rem 3.5rem 2px rgb(0 0 0 / 60%);
 }
 
-.feature_horizontal_img {
-  position: absolute;
-  top: 0px;
-}
-
 // .down-icon-call-box svg {
 //   font-size: 40px;
 //   height: 40px;
@@ -436,6 +436,39 @@ svg:not(:root).svg-inline--fa {
 @media (max-width: 450px) {
   .heroimgfront {
     right: initial !important;
+  }
+}
+
+.feature_horizontal_img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  transition: all 0.5s ease-in;
+}
+
+img.feature_profile_img {
+  z-index: 11;
+  width: 258px;
+  right: 21px;
+  top: 19px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.5s;
+}
+
+.feature_img {
+  z-index: 10;
+}
+section#features {
+  &:hover {
+    .feature_horizontal_img {
+      left: calc(100% + 20px);
+    }
+    img.feature_profile_img {
+      opacity: 1;
+    }
   }
 }
 </style>
