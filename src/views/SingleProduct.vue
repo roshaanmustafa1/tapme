@@ -88,8 +88,8 @@
               contactless way. With Just a Simple “Tap or Scan” , you can
               instantly share your contact info with everyone you meet, comes
               with integrated nfc technology, which enables you to transmit your
-              contact details, socials & so much more into any smartphone with
-              no app needed.
+              contact details, socials &amp; so much more into any smartphone
+              with no app needed.
             </p>
             <div class="product-buttons d-flex justify-content-center my-3">
               <btn-brown
@@ -144,22 +144,30 @@
 </template>
 
 <script>
-import BtnBrown from "@/components/BtnBrown.vue";
+import BtnBrown from '@/components/BtnBrown.vue'
 
 export default {
   components: { BtnBrown },
   data() {
     return {
       isAdded: false,
-      cardDetails: { name: "", email: "", phoneNo: "" },
-    };
+      cardDetails: { name: '', email: '', phoneNo: '' },
+    }
   },
   methods: {
     toggleBtn() {
-      this.isAdded = true;
+      this.isAdded = true
+
+      this.$store.dispatch('updateCart', 1)
+      this.$store.dispatch('updateProducts', {
+        PTitle: 'Black & White Premium Card',
+        PPrice: 200,
+        PDescription:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente?',
+      })
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

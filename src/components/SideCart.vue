@@ -29,7 +29,11 @@
                   class="pb-2 d-flex justify-content-between align-items-baselineF"
                 >
                   {{ product.PTitle }}
-                  <b-icon icon="x-circle" aria-hidden="true"></b-icon>
+                  <b-icon
+                    icon="x-circle"
+                    aria-hidden="true"
+                    @click="deleteProduct(index)"
+                  ></b-icon>
                 </h4>
 
                 <div class="text-dark">
@@ -65,24 +69,29 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
       cartItems: [],
-    };
+    }
   },
   computed: {
-    ...mapState(["products"]),
+    ...mapState(['products']),
     getTotalAmount() {
-      let total = 0;
+      let total = 0
       this.products.forEach((product) => {
-        total += product.PPrice;
-      });
-      return total;
+        total += product.PPrice
+      })
+      return total
     },
   },
-};
+  methods: {
+    deleteProduct(index) {
+      this.$store.dispatch('deleteProduct', index)
+    },
+  },
+}
 </script>
 
 <style lang="scss">

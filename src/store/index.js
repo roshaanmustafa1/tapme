@@ -1,7 +1,7 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
@@ -11,24 +11,31 @@ export default new Vuex.Store({
   },
   mutations: {
     updateCart(state, payload) {
-      state.cartItems += payload;
+      state.cartItems += payload
     },
     updateProducts(state, payload) {
-      state.products.push(payload);
+      state.products.push(payload)
     },
     updateUser(state, payload) {
-      state.user = payload;
+      state.user = payload
+    },
+    deleteProduct(state, payload) {
+      state.products.splice(payload, 1)
+      state.cartItems--
     },
   },
   actions: {
     updateCart({ commit }, payload) {
-      commit("updateCart", payload);
+      commit('updateCart', payload)
     },
     updateProducts({ commit }, payload) {
-      commit("updateProducts", payload);
+      commit('updateProducts', payload)
     },
     updateUser({ commit }, payload) {
-      commit("updateUser", payload);
+      commit('updateUser', payload)
+    },
+    deleteProduct({ commit }, payload) {
+      commit('deleteProduct', payload)
     },
   },
-});
+})
