@@ -1,0 +1,214 @@
+<template>
+  <div class="HeaderMain" :class="{ scrolled: scrollPosition > 50 }">
+    <b-navbar toggleable="sm" type="light" class="mainheader">
+      <div class="container">
+        <router-link to="/" tag="b-navbar-brand">
+          <svg class="logo">
+            <use xlink:href="@/assets/images/whitelogo.svg#logo"></use>
+          </svg>
+        </router-link>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <router-link to="/" tag="b-nav-item" exact>Home</router-link>
+            <router-link to="/shop" tag="b-nav-item">Shop</router-link>
+            <router-link to="/contact" tag="b-nav-item">Contact Us</router-link>
+            <router-link to="/about" tag="b-nav-item">About Us</router-link>
+          </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ms-auto naviconbox">
+            <b-nav-item-dropdown class="ms-auto searchDropdown" right
+              ><template #button-content>
+                <span><b-icon icon="Search"></b-icon></span>
+              </template>
+              <div class="d-flex">
+                <b-form-input
+                  size="sm"
+                  class="mr-sm-2"
+                  placeholder="Search"
+                ></b-form-input>
+                <b-button size="sm" class="my-2 my-sm-0" type="submit"
+                  >Search</b-button
+                >
+              </div>
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content>
+                <span><b-icon icon="person-fill"></b-icon></span>
+              </template>
+              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item
+              ><b-icon
+                icon="cart-fill "
+                class="position-relative"
+                v-b-toggle.sidebar-right
+              ></b-icon>
+              <span
+                class="cartItemsCout badge bg-warning text-dark rounded-pill position-absolute top-0 mt-3"
+                >{{ cartItems }}</span
+              >
+            </b-nav-item>
+            <b-nav-item class="ms-2" v-if="!user.displayName"
+              ><router-link to="/login"
+                ><btn-brown btnbrownText="Login" Class="navloginbutton"
+              /></router-link>
+            </b-nav-item>
+            <b-nav-item class="ms-2" v-else>
+              <btn-brown
+                btnbrownText="Logout"
+                @click.native="signOut"
+                Class="navloginbutton"
+              />
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </div>
+    </b-navbar>
+    <SideCart />
+  </div>
+</template>
+
+<script>
+import SideCart from "@/components/SideCart";
+import BtnBrown from "./BtnBrown.vue";
+import { getAuth, signOut } from "firebase/auth";
+import { mapState } from "vuex";
+export default {
+  name: "HeaderMain",
+  components: { SideCart, BtnBrown },
+  data() {
+    return { scrollPosition: null };
+  },
+  computed: {
+    ...mapState(["cartItems", "user"]),
+  },
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
+    },
+    signOut() {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          this.$store.dispatch("updateUser", {});
+          this.$toast.success("Success");
+        })
+        .catch((error) => {
+          this.$toast.error(error.message);
+        });
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.navButton {
+  transition: 0.1s;
+}
+a.btn.btn1 {
+  color: white;
+}
+nav.navbar {
+  padding: 0px 35px;
+}
+.form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+
+<style lang="scss">
+.router-link-active a {
+  background: var(--brown-primary) !important;
+  color: #fff !important;
+}
+
+.searchDropdown ul.dropdown-menu {
+  width: 500px !important;
+  padding: 0;
+}
+
+.searchDropdown button.btn.my-2.my-sm-0.btn-secondary.btn-sm {
+  background-color: #eb8d2b !important;
+  padding: 5px 25px;
+  color: var(--black-secondary);
+}
+
+.searchDropdown input {
+  border: 1px solid black !important;
+}
+
+input::placeholder {
+  color: black !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.HeaderMain {
+  position: sticky;
+  top: 0;
+  background-color: transparent !important;
+  z-index: 20 !important;
+  margin-bottom: -95px;
+  transition: 0.2s all ease-in;
+  a.nav-link {
+    margin-right: 10px;
+  }
+}
+.mainheader a.nav-link {
+  color: rgb(0, 0, 0) !important;
+  border-radius: 3px;
+}
+
+.naviconbox {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 90px;
+  height: 65px;
+  use {
+    transition: all 0.2s ease-in;
+  }
+}
+.navloginbutton {
+  background: #2c2c2c !important;
+  color: var(--brown-primary) !important;
+  .navloginbutton:hover {
+    color: #2c2c2c !important;
+    z-index: 99;
+    border: 1px solid #2c2c2c;
+  }
+}
+
+.scrolled .mainheader {
+  background-color: rgb(0, 0, 0) !important;
+  a.nav-link {
+    color: white !important;
+  }
+  svg {
+    color: #fff !important;
+    font-size: 22px;
+  }
+  .logo use {
+    fill: #fff !important;
+  }
+  .navloginbutton {
+    color: white !important;
+    background-color: transparent !important;
+  }
+}
+</style>
